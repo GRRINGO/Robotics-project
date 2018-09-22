@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------------------
+These instructions are to get the project model up and running.
+Just to make sure everything runs smoothly these instructions
+also are to build everything using cmake. To use all command as it is place the
+project folder in home directory.
+!DO NOT CLOSE ANY OF THE TERMINALS!
+--------------------------------------------------------------------------------------
+
+*new terminal
+//Run roscore:
+$ roscore
+
+*new terminal 
+//(turtlebot3-teleop has to be installed)
+//to install type: sudo apt-get install ros-kinetic-turtlebot3-teleop
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+*new terminal
+//change directory to the project/build where ever it is located
+$ cd ~/project/build
+$ cmake ..
+$ make
+$ cd ..
+//here the "~/project/build" path must be also the path of the /project/build folder
+$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/project/build
+$ rosrun gazebo_ros gzserver model.world --verbose
+
+//new terminal
+$ rosrun gazebo_ros gzclient
+
+
+--------------------------------------------------------------------------------------
+After this everything should be running correctly. To control the robot in gazebo
+switch to the terminal where the turtlebot3-teleop is running and read the 
+instructions there. The rotation speed values for both wheels can be viewed from the
+terminal where gzserver is running.
+
+
+
+Members :
+Noah Nettey        904715
+Kristoffer Nesland 904322

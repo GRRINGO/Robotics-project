@@ -1,0 +1,556 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="default">
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+<!-- Differential drive model -->
+
+<model name="project">
+  <pose>0 0 0.05 0 0 0</pose>
+    <link name="robot_chassis">
+      <inertial>
+        <pose>0.007 0.003 0.112 0 0 0</pose>
+        <mass>13.741</mass>
+      </inertial>
+
+    <!-- COLLISIONS -->
+      <!--Base plate collisions-->
+      <collision name="base_plate0">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.406 0.544 0.002</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_plate1">
+        <pose>-0 -0.101 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.596 0.286 0.002</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_plate2">
+        <pose>-0.145 -0.272 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.116 0.104 0.002</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_plate3">
+        <pose>0.145 -0.272 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.116 0.104 0.002</size>
+          </box>
+        </geometry>
+      </collision>
+      <!--Chassis collisions -->
+        <!--Upper part -->
+      <collision name="chassis0_up">
+        <pose>0 -0.314 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis1_up">
+        <pose>0 -0.129 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis2_up">
+        <pose>0 0.261  0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis3_up">
+        <pose>0.290 -0.026 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.600 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis4_up">
+        <pose>-0.290 -0.026 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.600 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis5_up">
+        <pose>-0.195 0.070 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.385 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis6_up">
+        <pose>0.195 0.070 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.385 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <!--Chassis collisions -->
+        <!--Lower part -->
+      <collision name="chassis0_down">
+        <pose>0 0.262 0.011 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.600 0.020 0.020</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis1_down">
+        <pose>0.221 0.262 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis2_down">
+        <pose>-0.221 0.262 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis3_down">
+        <pose>-0.266 0.262 0.165 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.069 0.020 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis4_down">
+        <pose>0.266 0.262 0.165 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.069 0.020 0.040</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis5_down">
+        <pose>0 -0.314 0.011 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.462 0.020 0.020</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis6_down">
+        <pose>0.221 -0.314 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="chassis7_down">
+        <pose>-0.221 -0.314 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </collision>
+
+    <!-- VISUALS -->
+
+      <!--Base plate visuals -->
+      <visual name="base_plate_visual0">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.406 0.544 0.002</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="base_plate_visual1">
+        <pose>0 -0.101 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.596 0.286 0.002</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="base_plate_visual2">
+        <pose>-0.145 -0.272 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.116 0.104 0.002</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="base_plate_visual3">
+        <pose>0.145 -0.272 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.116 0.104 0.002</size>
+          </box>
+        </geometry>
+      </visual>
+      <!--Chassis visuals -->
+        <!-- Upper part -->
+      <visual name="chassis0_up">
+        <pose>0 -0.314 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis1_up">
+        <pose>0 -0.129 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis2_up">
+        <pose>0 0.261  0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.570 0.020 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis3_up">
+        <pose>0.290 -0.026 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.600 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis4_up">
+        <pose>-0.290 -0.026 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.600 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis5_up">
+        <pose>-0.195 0.070 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.385 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis6_up">
+        <pose>0.195 0.070 0.225 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.385 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+        <!--Lower part -->
+      <visual name="chassis0_down">
+        <pose>0 0.262 0.011 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.600 0.020 0.020</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis1_down">
+        <pose>0.221 0.262 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis2_down">
+        <pose>-0.221 0.262 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis3_down">
+        <pose>-0.266 0.262 0.165 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.069 0.020 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis4_down">
+        <pose>0.266 0.262 0.165 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.069 0.020 0.040</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis5_down">
+        <pose>0 -0.314 0.011 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.462 0.020 0.020</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis6_down">
+        <pose>0.221 -0.314 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="chassis7_down">
+        <pose>-0.221 -0.314 0.1135 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.185</size>
+          </box>
+        </geometry>
+      </visual>
+
+    <!-- WHEELS-->
+      <!-- Rear bickle wheels as casters -->
+      <!-- Both colllisions and visual -->
+      <collision name = "left_bickle_wheel_caster">
+        <pose>-0.2635 -0.2895 0.001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.016618</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name = "left_bickle_wheel_caster_visual">
+        <pose>-0.2635 -0.2895 0.001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.016618</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name = "right_bickle_wheel_caster">
+        <pose>0.2635 -0.2895 0.001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.016618</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name = "right_bickle_wheel_caster_visual">
+        <pose>0.2635 -0.2895 0.001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.016618</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="left_motor_wheel">
+      <inertial>
+        <pose>0 0 0.0042 0 0 0</pose>
+        <mass>1.790</mass>
+      </inertial>
+      <pose>-0.270 0.149 0.0835 0 1.57079632679 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.100</radius>
+            <length>0.038 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.100</radius>
+            <length>0.038 </length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_motor_wheel">
+      <inertial>
+        <pose>0 0 0.0042 0 0 0</pose>
+        <mass>1.790</mass>
+      </inertial>
+      <pose>0.270 0.149 0.0835 0 -1.57079632679 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.100</radius>
+            <length>0.038 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.100</radius>
+            <length>0.038 </length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+  <!-- These are the actual rear wheels. ATM replaced with casters.
+    <link name="left_bickle_wheel">
+      <pose>-0.2635 -0.2895 0.001 1.57079632679 0 1.57079632679</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.016618</radius>
+            <length>0.0265 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.016618</radius>
+            <length>0.0265 </length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_bickle_wheel">
+      <pose>0.2635 -0.2895 0.001 1.57079632679 0 1.57079632679</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.016618</radius>
+            <length>0.0265 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.016618</radius>
+            <length>0.0265 </length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+  -->
+  <!-- JOINTS -->
+    <joint type="revolute" name="left_motor_wheel_hinge">
+      <parent>robot_chassis</parent>
+      <child>left_motor_wheel</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="right_motor_wheel_hinge">
+      <parent>robot_chassis</parent>
+      <child>right_motor_wheel</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute2" name="left_bickle_wheel_hinge">
+      <parent>robot_chassis</parent>
+      <child>left_bickle_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+      </axis2>
+    </joint>
+
+    <joint type="revolute2" name="right_bickle_wheel_hinge">
+      <parent>robot_chassis</parent>
+      <child>right_bickle_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+      </axis2>
+    </joint>
+
+<!-- Differential drive plugin -->
+
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>10</updateRate>
+    <leftJoint>right_motor_wheel_hinge</leftJoint>
+    <rightJoint>left_motor_wheel_hinge</rightJoint>
+    <wheelSeparation>0.53</wheelSeparation>
+    <wheelDiameter>0.2</wheelDiameter>
+    <torque>5</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+    <robotNamespace>/</robotNamespace>
+  </plugin>
+
+<!-- Encoder plugin -->
+
+  <plugin name="model_encoder" filename="libmodel_encoder.so"/>
+
+  </model>    
+
+     
+  </world>
+</sdf>
